@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Project page</title>
+	<script src="scriptInfo.js"></script>
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+		h1 {
+			text-align: center;
+		}
+		#project h3, #project p {
+			border: 1px solid #e8e8e3;
+			border-radius: 5px;
+			background-color: #e8e8e3;
+			max-width: 600px;
+			padding: 10px;
+		}
+		#list {
+			border: 1px solid #f3f3f1;
+			border-radius: 5px;
+			background-color: #f3f3f1;
+			max-width: 600px;
+			padding: 25px;
+			line-height: 1.5;
+		}
+		#listIssue, #stat, #type {
+			border: 1px solid #f3f3f1;
+			border-radius: 5px;
+			background-color: #f3f3f1;
+			max-width: 600px;
+			padding: 25px 25px 60px 25px;
+			line-height: 1.5;
+		}
+		#updateIssue, #newIssue, #addSprint, #addCom {
+			width: 100px;
+			height: 35px;
+			margin: 20px 20px 20px 80px;
+			border-radius: 5px;
+			border: 1px solid #66ccff;
+			background-color: #66ccff;
+			color: #000;
+		}
+		#secSprint,#comments {
+			border: 1px solid #f3f3f1;
+			border-radius: 5px;
+			background-color: #f3f3f1;
+			max-width: 700px;
+			padding: 25px 25px 60px 25px;
+			line-height: 1.5;
+		}
+		#sprintName {
+			width: 50%;
+			height: 30px;
+			border-radius: 5px;
+			border: #e6e6e6;
+			padding: 5px;
+			background-color: #fff;
+		}
+		textarea {
+			width: 250px; 
+			height: 140px;
+		}
+	</style>
+  </head>
+
+  <body>
+	  <section>
+		<h1>Projects</h1>
+		<article id="project"><article>
+	</section>
+	
+	<article id="stat"><h3>Issues in each status</h3></article>
+	<br /><br />
+	<article id="type"><h3>Issues type</h3></article>
+	<!--<article id="filterStatus"><h3>Filter status</h3></article>-->
+	<br /><br />
+	<section id="secSprint">
+		<h3>Sprints</h3>
+		<article id="sprints"></article>
+	</section>
+	<br /><br />
+	<section id="comments">
+		<h3>Comments</h3>
+	</section>
+  </body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Project page</title>
+	<script src="scriptIssue.js"></script>
+	<style>
+		h1 {
+			text-align: center;
+		}
+		.text {
+			margin: 0;
+			padding: 0;
+			display: block;
+		}
+		label {
+			margin: 0;
+			padding: 0;
+			display: block;
+			padding-top: 0.4em;
+			padding-right: 0.25em;
+			width: 10em;
+			text-align: right;
+			float: left;
+			color: #000;
+		}
+		input {
+			padding: 5px;
+			border-radius: 5px;
+			border: #e6e6e6;
+			background-color: #e6e6e6;
+			margin: 5px 10px;
+			width: 350px;
+		}
+		button {
+			width: 100px;
+			height: 35px;
+			margin: 20px 20px 20px 280px;
+			border-radius: 5px;
+			border: 1px solid #66ccff;
+			background-color: #66ccff;
+			color: #000;
+		}
+		select {
+			margin-left: 10px;
+			border-radius: 5px;
+			height: 25px;
+		}
+	</style>
+  </head>
+
+  <body>
+	<h1>New issue</h1>
+	<div id="newIssue">
+		<div class='text'><label>Id: </label><input type="text" id="idIssue" disabled></div><br />
+		<div class='text'><label>Type: </label><select id="typeIssue">
+			<option value="Features">Features</option>
+			<option value="Bugs">Bugs</option>
+			<option value="Tasks">Tasks</option>
+		</select>
+		</div><br />
+		<div class='text'><label>Name: </label><input type="text" id="nameIssue" name="nameIssue"></div><br />
+		<div class='text'><label>Sprint: </label><input type="text" id="sprintIssue" name="sprintIssue"></div><br />
+		<div class='text'><label>CreatedBy: </label><input type="text" id="userIssue" name="userIssue" readonly></div><br />
+		<div class='text'><label>Assignee: </label><input type="text" id="assigIssue" name="assigIssue" readonly></div><br /> 
+		<div class='text'><label>Description: </label><input type="text" id="textIssue" name="textIssue"></div><br />
+		<div class='text'><label>Status: </label><select id="statusIssue" disabled>
+					<option selected>New</option>
+					<option>In progress</option>
+					<option>Feedback</option>
+					<option>Rework</option>
+					<option>Resolved</option>
+					<option>Ready for Testing</option>
+				</select>
+		</div><br />
+		<div class='text'><label>Tasks: </label><input type="text" id="taskIssue" name="taskIssue"></div><br />
+		<div class='text'><label>Comments: </label><input type="text" id="commIssue" name="commIssue"></div><br />
+		<div class='text'><label>UpdatedAt: </label><input type="date" id="updateIssue" disabled></div><br />
+		<div class='text'><label>CreatedAt: </label><input type="date" id="createIssue" disabled></div><br />
+		<button>Save issue</button>
+	</div>
+  </body>
+</html>
+
