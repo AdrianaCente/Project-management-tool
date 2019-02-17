@@ -4,6 +4,19 @@ var ID = function () {
   return Math.floor(new Date().valueOf() * Math.random());
 };
 
+function Status(options={}) {
+ 	this.id=ID();
+ 	this.name=options.name;
+};
+var status1=new Status({name:"New"});
+var status2=new Status({name:"In progress"});
+var status3=new Status({name:"Feedback"});
+var status4=new Status({name:"Rework"});
+var status5=new Status({name:"Resolved"});
+var status6=new Status({name:"Ready for Testing"});
+var statusArray=[status1, status2, status3, status4, status5, status6];
+localStorage.projectStatus=JSON.stringify(statusArray);
+
 function onHtmlLoaded() {
 	var sprints=[];
 	var sprint=document.getElementById("sprints");
@@ -61,14 +74,11 @@ function onHtmlLoaded() {
 		var sprintArr=[];
 		var arr=[];
 		var project={};
-		var statusVal={};
 		var localProject;
 		sprintArr=JSON.parse(localStorage.sprintList);
 		for (var i=0; i<sprintArr.length;i++)	{ 
 			arr.push(sprintArr[i].id);
 		}
-		statusVal={idStatus: ID(),name:["New", "In progress", "Feedback", "Rework", "Resolved", "Ready for Testing"]};
-		localStorage.projectStatus=JSON.stringify(statusVal);
 		project={idProject: 180113557927, sprints: arr};
 		localStorage.projectLocal=JSON.stringify(project);
 		localProject=JSON.parse(localStorage.projectLocal);
