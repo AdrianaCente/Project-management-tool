@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Project page</title>
-	<script src="scriptIssue.js"></script>
+	<script src="addIssue.js"></script>
 	<style>
 		h1 {
 			text-align: center;
@@ -59,9 +59,9 @@
 		</select>
 		</div><br />
 		<div class='text'><label>Name: </label><input type="text" id="nameIssue" name="nameIssue"></div><br />
-		<div class='text'><label>Sprint: </label><input type="text" id="sprintIssue" name="sprintIssue"></div><br />
+		<div class='text'><label>Sprint: </label><select id="sprintIssue" ></select></div><br />
 		<div class='text'><label>CreatedBy: </label><input type="text" id="userIssue" name="userIssue" readonly></div><br />
-		<div class='text'><label>Assignee: </label><input type="text" id="assigIssue" name="assigIssue" readonly></div><br /> 
+		<div class='text'><label>Assignee: </label><select id="assigIssue" ></select></div><br />
 		<div class='text'><label>Description: </label><input type="text" id="textIssue" name="textIssue"></div><br />
 		<div class='text'><label>Status: </label><select id="statusIssue" disabled>
 					<option selected>New</option>
@@ -72,8 +72,8 @@
 					<option>Ready for Testing</option>
 				</select>
 		</div><br />
-		<div class='text'><label>Tasks: </label><input type="text" id="taskIssue" name="taskIssue"></div><br />
-		<div class='text'><label>Comments: </label><input type="text" id="commIssue" name="commIssue"></div><br />
+		<div class='text'><label>Tasks: </label><select id="taskIssue" ></select></div><br />
+		<div class='text'><label>Comments: </label><select id="commIssue" ></select></div><br />
 		<div class='text'><label>UpdatedAt: </label><input type="date" id="updateIssue" disabled></div><br />
 		<div class='text'><label>CreatedAt: </label><input type="date" id="createIssue" disabled></div><br />
 		<button>Save issue</button>

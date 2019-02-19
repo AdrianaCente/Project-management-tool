@@ -16,11 +16,14 @@ var userList=[];
 var userName;
 var bool;
 var id;
+var userStorage;	
+userList.push(user1, user2, user3, user4);
+console.log(userList);
+localStorage.userStorage=JSON.stringify(userList);
+
+
 	
 function onHtmlLoaded() { 
-	userList.push(user1, user2, user3, user4);
-	console.log(userList);
-
 	document.querySelector("button").addEventListener("click", checkName);
 	function checkName() {
 		userName=document.getElementById("userName").value;
@@ -31,7 +34,7 @@ function onHtmlLoaded() {
 			} 
 		}
 		if  (bool===true) {
-			window.open("projectInfo.html","_self");
+			window.open("projectUpdate.html","_self");
 			localStorage.setItem("userId", id);
 			} 
 			else {

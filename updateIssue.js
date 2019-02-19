@@ -8,6 +8,31 @@ function onHtmlLoaded() {
 	for (var i=0; i<list.length; i++) {
 		issue.innerHTML+="<option value="+list[i].id+">"+list[i].id+"</option>"
 	}
+	
+	var sprintList=JSON.parse(localStorage.sprintList);
+	var sel=document.getElementById("sprintIssue");
+	for (var i=0; i<sprintList.length; i++) {
+		sel.innerHTML+="<option value='"+sprintList[i].id+"'>"+sprintList[i].id+"</option>";
+	}
+	
+	var taskList=JSON.parse(localStorage.issueList);
+	var tasks=document.getElementById("taskIssue");
+	for (var i=0; i<taskList.length; i++) {
+		tasks.innerHTML+="<option value='"+taskList[i].id+"'>"+taskList[i].id+"</option>";
+	}
+	
+	var commList=JSON.parse(localStorage.commentList);
+	var comm=document.getElementById("commIssue");
+	for (var i=0; i<commList.length; i++) {
+		comm.innerHTML+="<option value='"+commList[i].id+"'>"+commList[i].id+"</option>";
+	}
+	
+	var assignList=JSON.parse(localStorage.userStorage);
+	var assig=document.getElementById("assigIssue");
+	for (var i=0; i<assignList.length; i++) {
+		assig.innerHTML+="<option value='"+assignList[i].id+"'>"+assignList[i].id+"</option>";
+	}
+	
 	issue.addEventListener("change", function() {
 		var id = document.getElementById("listIssues").value;
 		for (var i=0; i<list.length; i++) {
@@ -57,7 +82,7 @@ function onHtmlLoaded() {
 		};
 			console.log(issue1);
 						
-			
+			//If the user moves the bug or feature in a different sprint, the subtasks will have to be moved as well
 			var sprintCheck=issue1.tasks.split(","); 
 			for (var i=0; i<sprintCheck.length; i++) {
 				for (var j=0; j<list.length; j++) {
@@ -68,6 +93,7 @@ function onHtmlLoaded() {
 				}
 			}
 			
+			//As soon as a task changes its status from New to any other, it's corresponding issue will change it's status as well to it's parent status.
 			for (var i=0; i<sprintCheck.length; i++) {
 				for (var j=0; j<list.length; j++) {
 					if (sprintCheck[i]==list[j].id) {
@@ -80,7 +106,7 @@ function onHtmlLoaded() {
 				}
 			}
 			
-		
+		//Completing all the tasks of a bug or feature will change the status of that issue to Ready For Testing.
 			/*for (var i=0; i<sprintCheck.length; i++) {
 				for (var j=0; j<list.length; j++) {
 					if (sprintCheck[i]==list[j].id) {

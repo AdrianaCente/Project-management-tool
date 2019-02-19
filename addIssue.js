@@ -7,9 +7,35 @@ var ID = function () {
 
 function onHtmlLoaded() {
 	var issue=[];
+	if (localStorage.sprintList) {
+	var sprintList=JSON.parse(localStorage.sprintList);
+	var sel=document.getElementById("sprintIssue");
+	for (var i=0; i<sprintList.length; i++) {
+		sel.innerHTML+="<option value='"+sprintList[i].id+"'>"+sprintList[i].id+"</option>";
+	}
+	}
+	
+	var taskList=JSON.parse(localStorage.issueList);
+	var task=document.getElementById("taskIssue");
+	for (var i=0; i<taskList.length; i++) {
+		task.innerHTML+="<option value='"+taskList[i].id+"'>"+taskList[i].id+"</option>";
+	}
+	if (localStorage.commentList) {
+	var commList=JSON.parse(localStorage.commentList);
+	var comm=document.getElementById("commIssue");
+	for (var i=0; i<commList.length; i++) {
+		comm.innerHTML+="<option value='"+commList[i].id+"'>"+commList[i].id+"</option>";
+	}
+	}
+	
+	var assignList=JSON.parse(localStorage.userStorage);
+	var assig=document.getElementById("assigIssue");
+	for (var i=0; i<assignList.length; i++) {
+		assig.innerHTML+="<option value='"+assignList[i].id+"'>"+assignList[i].id+"</option>";
+	}
+	
 	var userId=localStorage.getItem("userId");
 	document.getElementById("userIssue").value=userId;
-	document.getElementById("assigIssue").value=userId;	
 	document.querySelector("button").addEventListener("click", function() {
 		var typeI=document.getElementById("typeIssue").value;
 		var nameI=document.getElementById("nameIssue").value;
